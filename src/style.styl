@@ -1,0 +1,53 @@
+*
+  box-sizing border-box
+  color #10222B
+  font 11pt "Gill Sans Std", "Gill Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif
+
+#app, html, body
+  height 100%
+  margin 0
+  background #F6FFE0
+
+#app
+  display flex
+
+#control
+  background-color #BDD684
+  flex 0 0 420px
+  padding 0 5px
+
+#output
+  flex 1 1
+  overflow-y scroll
+  padding 15px
+  table
+    border-collapse collapse
+    td
+      border 1px dotted #95AB63
+      padding 5px
+
+.tabbar
+  display flex
+  padding-bottom 4px
+  > a
+    padding 5px
+    color inherit
+    text-align center
+    flex 1
+    text-decoration none
+    &.active
+      border-bottom 1px solid #10222B
+
+#control
+  textarea
+    width 100%
+    height 150px
+    margin 5px 0
+  section
+    margin-bottom 1em
+    padding-bottom 1em
+    border-bottom 1px dotted #10222b
+  #generate
+    display block
+    padding 5px
+    width 100%

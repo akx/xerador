@@ -1,14 +1,14 @@
 const m = require("mithril");
-const _ = require("lodash");
 const cx = require("classnames");
 const generate = require("./generate");
+const set = require("lodash/object/set");
 
 const tablesUi = function (ctrl) {
     return m("section#tables",
-        m("div.tabbar", _.keys(ctrl.tables).sort().map(
+        m("div.tabbar", Object.keys(ctrl.tables).sort().map(
             (t) => m("a", {
                     href: "#",
-                    onclick: () => _.set(ctrl, "currentTable", t),
+                    onclick: () => set(ctrl, "currentTable", t),
                     className: cx({active: ctrl.currentTable === t})
                 }, t
             )
@@ -24,7 +24,7 @@ const tablesUi = function (ctrl) {
         m("div",
             m("textarea", {
                 oninput: function () {
-                    _.set(ctrl.tables, ctrl.currentTable, this.value);
+                    set(ctrl.tables, ctrl.currentTable, this.value);
                 },
                 value: ctrl.tables[ctrl.currentTable]
             }),

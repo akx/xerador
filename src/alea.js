@@ -74,7 +74,7 @@ function impl(seed, opts) {
     };
     prng.quick = prng;
     if (state) {
-        if (typeof(state) == "object") copy(state, xg);
+        if (typeof (state) == "object") copy(state, xg);
         prng.state = function () {
             return copy(xg, {});
         };

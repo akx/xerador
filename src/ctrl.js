@@ -1,5 +1,5 @@
 const m = require("mithril");
-const _ = require("lodash");
+const cloneDeep = require("lodash/lang/cloneDeep");
 
 module.exports = function () {
     const self = this;
@@ -15,9 +15,9 @@ module.exports = function () {
         m.startComputation();
         try {
 
-            self.tables = _.cloneDeep(dataset.tables || {});
+            self.tables = cloneDeep(dataset.tables || {});
             self.rules = dataset.rules || self.rules || "";
-            self.currentTable = _.keys(self.tables)[0];
+            self.currentTable = Object.keys(self.tables)[0];
         } finally {
             m.endComputation();
         }
